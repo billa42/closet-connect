@@ -12,10 +12,6 @@ class TestClosetUtilsMethods(unittest.TestCase):
                              "TEST_TEXT"), 0,
             "Embed text exited with non zero error")
 
-        zip_path: Path = Path('closet.temp.zip')
-        self.assertTrue(zip_path.exists())
-        zip_path.unlink()
-
         out_img_path: Path = Path('out_image.png')
         self.assertTrue(out_img_path.exists())
         out_img_path.unlink()
@@ -35,10 +31,6 @@ class TestClosetUtilsMethods(unittest.TestCase):
             utils.embed_text("share/test_image.png", "out_image.png",
                              "TEST_TEXT"), 0,
             "Embed text exited with non zero error")
-
-        zip_path: Path = Path('closet.temp.zip')
-        self.assertTrue(zip_path.exists())
-        zip_path.unlink()
 
         message, exit_code = utils.extract_text("out_image.png")
 
